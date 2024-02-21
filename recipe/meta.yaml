@@ -22,6 +22,7 @@ requirements:
     - setuptools-scm >=3.4
     - pip
   run:
+    - appdirs
     - python >=3.9
     - numpy
     - opendrift
