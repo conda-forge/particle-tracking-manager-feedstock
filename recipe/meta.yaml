@@ -1,5 +1,5 @@
 {% set name = "particle-tracking-manager" %}
-{% set version = "0.4.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/particle_tracking_manager-{{ version }}.tar.gz
-  sha256: 4486510ad37f28c728467afa9d5ed092a5d486166a624f54c7deab5a05d087ae
+  sha256: 7d3a5ef91a5d9960146f6a668c0f89008d5119f048af07520ca1e59e8eb34edf
 
 build:
   noarch: python
@@ -23,6 +23,7 @@ requirements:
     - pip
   run:
     - python >=3.9
+    - appdirs
     - numpy
     - opendrift
     - pandas
