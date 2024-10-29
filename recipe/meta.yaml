@@ -25,7 +25,7 @@ requirements:
     - python >=3.9
     - appdirs
     - numpy
-    - opendrift
+    - opendrift >=1.11.13
     - pandas
     - xarray
 
