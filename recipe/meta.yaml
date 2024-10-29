@@ -24,6 +24,7 @@ requirements:
   run:
     - python >=3.9
     - appdirs
+    - kerchunk
     - numpy
     - opendrift >=1.11.13
     - pandas
