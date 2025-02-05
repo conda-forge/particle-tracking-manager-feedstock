@@ -1,5 +1,5 @@
 {% set name = "particle-tracking-manager" %}
-{% set version = "0.10.1" %}
+{% set version = "0.11.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/particle_tracking_manager-{{ version }}.tar.gz
-  sha256: c0aff5f6bab17025718353885edb70dc0983fb1d37899e7e84e322deee8c8808
+  sha256: 40cd8878152b6cd22f6e6163cf91990ae1d08237de24fac3bdb22ea44693c775
 
 build:
   noarch: python
