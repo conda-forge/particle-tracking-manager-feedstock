@@ -1,5 +1,5 @@
 {% set name = "particle-tracking-manager" %}
-{% set version = "0.11.4" %}
+{% set version = "0.11.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,26 +7,26 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/particle_tracking_manager-{{ version }}.tar.gz
-  sha256: ce3ef0fad9e3850bab4bb59ccb53d7930c16c23fe3414d06c9de835962cce54f
+  sha256: e5ba1cd76c19edfde29d119b3cc244e2c02faeb97e706382026ca676dbcfe1cb
 
 build:
+  entry_points:
+    - ptm=particle_tracking_manager.cli:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python >=3.9
     - setuptools >=42
     - wheel
     - setuptools-scm >=3.4
     - pip
   run:
-    - python >={{ python_min }}
-    - appdirs
-    - kerchunk
+    - python >=3.9
     - numpy
-    - opendrift >=1.11.13
+    - opendrift >=1.11.13,<=1.13.0
     - pandas
     - xarray
 
@@ -35,9 +35,9 @@ test:
     - particle_tracking_manager
   commands:
     - pip check
+    - ptm --help
   requires:
     - pip
-    - python {{ python_min }}
 
 about:
   home: https://github.com/axiom-data-science/particle-tracking-manager
