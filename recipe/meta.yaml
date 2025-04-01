@@ -14,7 +14,7 @@ build:
     - ptm=particle_tracking_manager.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -25,6 +25,9 @@ requirements:
     - pip
   run:
     - python >=3.9
+    - appdirs
+    - importlib_resources
+    - kerchunk ==0.2.7
     - numpy
     - opendrift >=1.11.13,<=1.13.0
     - pandas
