@@ -1,5 +1,5 @@
 {% set name = "particle-tracking-manager" %}
-{% set version = "0.11.5" %}
+{% set version = "0.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,31 +7,42 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/particle_tracking_manager-{{ version }}.tar.gz
-  sha256: e5ba1cd76c19edfde29d119b3cc244e2c02faeb97e706382026ca676dbcfe1cb
+  sha256: 144f03fa0f9969769f5903d04f4d53607895d7dd5cd23bb5f1b4c6d6a642ff2f
 
 build:
   entry_points:
     - ptm=particle_tracking_manager.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
-    - python >=3.9
+    - python >=3.11
     - setuptools >=42
     - wheel
     - setuptools-scm >=3.4
     - pip
   run:
-    - python >=3.9
+    - python >=3.11
+    - adios_db
+    - aiohttp
     - appdirs
+    - dask-core
+    - fastparquet
     - importlib_resources
     - kerchunk ==0.2.7
+    - matplotlib-base
+    - netcdf4
     - numpy
     - opendrift >=1.11.13,<=1.13.0
     - pandas
+    - pip
+    - pydantic
+    - requests
+    - scipy
     - xarray
+    - zarr <3.0.0
 
 test:
   imports:
