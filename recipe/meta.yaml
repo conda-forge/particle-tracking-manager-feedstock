@@ -1,5 +1,5 @@
 {% set name = "particle-tracking-manager" %}
-{% set version = "0.12.2" %}
+{% set version = "0.13.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/particle_tracking_manager-{{ version }}.tar.gz
-  sha256: 0fde5c8dafde958d2d2e59f45b8a3944b6ec6b28bd05a96549b30436e3101a32
+  sha256: 167ff094cc32cbc4c81d59ccffefb882df5c1cc9ba888bf8bc7f409ce2a6506c
 
 build:
   entry_points:
@@ -35,7 +35,7 @@ requirements:
     - matplotlib-base
     - netcdf4
     - numpy
-    - opendrift >=1.11.13,<=1.13.0
+    - opendrift ==1.13.0
     - pandas
     - pip
     - pydantic
